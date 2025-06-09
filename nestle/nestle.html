@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Marketing Digital - Nestlé</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="C:\Users\PROPIETARIO\Downloads\01.Proyectos\nestle\logo.svg" alt="Nestlé Logo">
+            </div>
+            <h1>Dashboard de Marketing Digital</h1>
+            <div class="date-filter">
+                <select id="date-range">
+                    <option value="7">Últimos 7 días</option>
+                    <option value="30" selected>Últimos 30 días</option>
+                    <option value="90">Últimos 90 días</option>
+                </select>
+            </div>
+        </header>
+
+        <section class="kpi-overview">
+            <div class="kpi-card">
+                <h3>Tráfico Web Total</h3>
+                <p class="kpi-number">1.25M</p>
+                <p class="kpi-trend positive">+12.3% vs período anterior</p>
+            </div>
+            <div class="kpi-card">
+                <h3>Conversiones</h3>
+                <p class="kpi-number">45.2K</p>
+                <p class="kpi-trend positive">+8.7% vs período anterior</p>
+            </div>
+            <div class="kpi-card">
+                <h3>Tasa de Conversión</h3>
+                <p class="kpi-number">3.6%</p>
+                <p class="kpi-trend negative">-0.5% vs período anterior</p>
+            </div>
+            <div class="kpi-card">
+                <h3>ROI</h3>
+                <p class="kpi-number">287%</p>
+                <p class="kpi-trend positive">+15.2% vs período anterior</p>
+            </div>
+        </section>
+
+        <div class="dashboard-grid">
+            <section class="chart-container">
+                <h2>Rendimiento de Campañas</h2>
+                <canvas id="campaigns-chart"></canvas>
+            </section>
+
+            <section class="chart-container">
+                <h2>Rendimiento por Canal</h2>
+                <canvas id="channels-chart"></canvas>
+            </section>
+
+            <section class="chart-container">
+                <h2>Rendimiento por Producto</h2>
+                <canvas id="products-chart"></canvas>
+            </section>
+
+            <section class="chart-container">
+                <h2>Tendencia de Conversiones</h2>
+                <canvas id="conversion-chart"></canvas>
+            </section>
+        </div>
+
+        <section class="data-tables">
+            <div class="table-container">
+                <h2>Rendimiento de Redes Sociales</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Plataforma</th>
+                            <th>Seguidores</th>
+                            <th>Impresiones</th>
+                            <th>Engagement</th>
+                            <th>CTR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Facebook</td>
+                            <td>5.2M</td>
+                            <td>8.7M</td>
+                            <td>3.8%</td>
+                            <td>2.1%</td>
+                        </tr>
+                        <tr>
+                            <td>Instagram</td>
+                            <td>3.8M</td>
+                            <td>12.3M</td>
+                            <td>4.7%</td>
+                            <td>2.8%</td>
+                        </tr>
+                        <tr>
+                            <td>Twitter</td>
+                            <td>2.1M</td>
+                            <td>4.5M</td>
+                            <td>1.9%</td>
+                            <td>1.5%</td>
+                        </tr>
+                        <tr>
+                            <td>LinkedIn</td>
+                            <td>1.5M</td>
+                            <td>2.2M</td>
+                            <td>2.3%</td>
+                            <td>1.8%</td>
+                        </tr>
+                        <tr>
+                            <td>TikTok</td>
+                            <td>1.2M</td>
+                            <td>15.6M</td>
+                            <td>6.2%</td>
+                            <td>3.4%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-container">
+                <h2>Rendimiento de Campañas de Email</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Campaña</th>
+                            <th>Tasa de Apertura</th>
+                            <th>Tasa de Clics</th>
+                            <th>Conversiones</th>
+                            <th>ROI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lanzamiento Nescafé Gold</td>
+                            <td>28.3%</td>
+                            <td>12.7%</td>
+                            <td>3,245</td>
+                            <td>312%</td>
+                        </tr>
+                        <tr>
+                            <td>Promoción KitKat</td>
+                            <td>32.1%</td>
+                            <td>15.4%</td>
+                            <td>4,872</td>
+                            <td>287%</td>
+                        </tr>
+                        <tr>
+                            <td>Nestlé Cereal Boletín</td>
+                            <td>25.6%</td>
+                            <td>9.8%</td>
+                            <td>2,154</td>
+                            <td>195%</td>
+                        </tr>
+                        <tr>
+                            <td>Purina Recompensas</td>
+                            <td>35.7%</td>
+                            <td>18.2%</td>
+                            <td>5,631</td>
+                            <td>342%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="adv-metrics">
+            <h2>Métricas Avanzadas</h2>
+            <div class="metrics-container">
+                <div class="metric-card">
+                    <h3>CAC (Costo de Adquisición)</h3>
+                    <p class="metric-value">€15.87</p>
+                    <div class="metric-chart">
+                        <canvas id="cac-chart"></canvas>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <h3>LTV (Valor de Vida del Cliente)</h3>
+                    <p class="metric-value">€289.54</p>
+                    <div class="metric-chart">
+                        <canvas id="ltv-chart"></canvas>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <h3>ROAS (Retorno de Gasto Publicitario)</h3>
+                    <p class="metric-value">3.75x</p>
+                    <div class="metric-chart">
+                        <canvas id="roas-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Datos ficticios para los gráficos
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gráfico de Campañas
+            const campaignsChart = new Chart(document.getElementById('campaigns-chart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Nescafé', 'KitKat', 'Nestlé Cereal', 'Purina', 'La Lechera'],
+                    datasets: [{
+                        label: 'ROI',
+                        data: [287, 312, 195, 342, 256],
+                        backgroundColor: 'rgba(75, 192, 192, 0.6)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Gráfico de Canales
+            const channelsChart = new Chart(document.getElementById('channels-chart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Redes Sociales', 'Email', 'Búsqueda Orgánica', 'Búsqueda Pagada', 'Directo'],
+                    datasets: [{
+                        label: 'Tráfico por Canal',
+                        data: [35, 25, 15, 20, 5],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.6)',
+                            'rgba(54, 162, 235, 0.6)',
+                            'rgba(255, 206, 86, 0.6)',
+                            'rgba(75, 192, 192, 0.6)',
+                            'rgba(153, 102, 255, 0.6)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true
+                }
+            });
+
+            // Gráfico de Productos
+            const productsChart = new Chart(document.getElementById('products-chart'), {
+                type: 'radar',
+                data: {
+                    labels: ['Café', 'Chocolate', 'Cereal', 'Alimentos para Mascotas', 'Lácteos', 'Agua'],
+                    datasets: [{
+                        label: 'Ventas',
+                        data: [85, 72, 65, 90, 60, 50],
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scale: {
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Gráfico de Conversiones
+            const conversionChart = new Chart(document.getElementById('conversion-chart'), {
+                type: 'line',
+                data: {
+                    labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+                    datasets: [{
+                        label: 'Conversiones',
+                        data: [1250, 1500, 2000, 1800, 2200, 2500],
+                        fill: false,
+                        borderColor: 'rgba(153, 102, 255, 1)',
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Gráficos para métricas avanzadas
+            const cacChart = new Chart(document.getElementById('cac-chart'), {
+                type: 'line',
+                data: {
+                    labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+                    datasets: [{
+                        data: [18.2, 17.5, 16.8, 16.2, 15.9, 15.8],
+                        borderColor: '#FF6384',
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: { x: { display: false }, y: { display: false } }
+                }
+            });
+
+            const ltvChart = new Chart(document.getElementById('ltv-chart'), {
+                type: 'line',
+                data: {
+                    labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+                    datasets: [{
+                        data: [250, 260, 265, 275, 282, 290],
+                        borderColor: '#36A2EB',
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: { x: { display: false }, y: { display: false } }
+                }
+            });
+
+            const roasChart = new Chart(document.getElementById('roas-chart'), {
+                type: 'line',
+                data: {
+                    labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+                    datasets: [{
+                        data: [3.2, 3.3, 3.4, 3.5, 3.6, 3.7],
+                        borderColor: '#4BC0C0',
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: { x: { display: false }, y: { display: false } }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
